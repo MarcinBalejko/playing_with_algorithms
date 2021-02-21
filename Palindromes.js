@@ -39,8 +39,6 @@ function palindrome(str) {
   });
 }
 
-// console.log(palindrome("abbazabba"));
-
 // FOURTH
 // function palindrome(str) {
 //     let checkArr = [];
