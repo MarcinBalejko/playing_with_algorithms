@@ -6,12 +6,42 @@
 //   capitalize('a lazy fox') --> 'A Lazy Fox'
 //   capitalize('look, it is working!') --> 'Look, It Is Working!'
 
-function capitalize(str) {
-  const strArr = str.split(" ");
-  let changedStrArr = strArr.map((el) => {
-    let changedEl = el[0].toUpperCase() + el.slice(1, el.length);
-    return changedEl;
-  });
+//FIRST SOLUTION
 
-  return changedStrArr.join(" ");
+// function capitalize(str) {
+//   const strArr = str.split(" ");
+//   let changedStrArr = strArr.map((el) => {
+//     let changedEl = el[0].toUpperCase() + el.slice(1, el.length);
+//     return changedEl;
+//   });
+
+//   return changedStrArr.join(" ");
+// }
+
+//SECOND SOLUTION (basically a refined version of the first one, but this time with 'for..of' loop)
+
+// function capitalize(str) {
+//   const words = [];
+
+//   for (let word of str.split(" ")) {
+//     words.push(word[0].toUpperCase() + word.slice(1));
+//   }
+
+//   return words.join(" ");
+// }
+
+//THIRD SOLUTION
+
+function capitalize(str) {
+  let result = str[0].toUpperCase();
+
+  for (let i = 1; i < str.length; i++) {
+    if (str[i - 1] === " ") {
+      result += str[i].toUpperCase();
+    } else {
+      result += str[i];
+    }
+  }
+
+  return result;
 }
